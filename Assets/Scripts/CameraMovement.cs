@@ -13,11 +13,13 @@ public class CameraMovement : MonoBehaviour
     RoomManager roomManager;
     Bounds mapBounds;
     float targetCamSize = 6;
+    PlayerMovement player;
 
     void Awake()
     {
         cam = GetComponent<Camera>();
         roomManager = FindObjectOfType<RoomManager>();
+        player = FindObjectOfType<PlayerMovement>();
     }
 
     void FixedUpdate()
@@ -42,5 +44,10 @@ public class CameraMovement : MonoBehaviour
             cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetCamSize, smoothing * 2 * Time.deltaTime);
             transform.position = Vector3.Lerp(transform.position, targetPos, smoothing * Time.deltaTime);
         }
+    }
+
+    public void SnapToPlayer()
+    {
+        transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
     }
 }

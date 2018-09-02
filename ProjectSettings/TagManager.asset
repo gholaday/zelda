@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Room
   - Sign
+  - DialogProvider
+  - Teleporter
+  - Breakable
   layers:
   - Default
   - TransparentFX
@@ -42,6 +45,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Props
+    uniqueID: 2183157205
     locked: 0
   - name: Player
     uniqueID: 1380051571

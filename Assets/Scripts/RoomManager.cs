@@ -14,15 +14,22 @@ public class RoomManager : MonoBehaviour
         {
             CurrentRoom = newRoom;
 
-            if (RoomNameDisplayText != null)
-            {
-                RoomNameDisplayText.text = newRoom.RoomName;
-            }
+            float timeToDisplay = newRoom.IsDisconnected ? 2f : 0;
 
-            if (UIAnimator != null)
-            {
-                UIAnimator.SetTrigger("displayRoomName");
-            }
+            Invoke("DisplayRoomName", timeToDisplay);
+        }
+    }
+
+    public void DisplayRoomName()
+    {
+        if (RoomNameDisplayText != null)
+        {
+            RoomNameDisplayText.text = CurrentRoom.RoomName;
+        }
+
+        if (UIAnimator != null)
+        {
+            UIAnimator.SetTrigger("displayRoomName");
         }
     }
 

@@ -7,30 +7,35 @@ public class PlayerInteract : MonoBehaviour
 
     RoomManager roomManager;
     DialogManager dialogManager;
+    PlayerMovement playerMovement;
+
     void Awake()
     {
         roomManager = FindObjectOfType<RoomManager>();
         dialogManager = FindObjectOfType<DialogManager>();
+        playerMovement = GetComponent<PlayerMovement>();
     }
-
-
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.tag == "Teleporter")
+        {
+            playerMovement.TeleportCharacter(other.GetComponent<Teleporter>().PlayerSpawn.position);
+        }
+
         if (other.tag == "Room")
         {
             InteractRoom(other);
         }
-
     }
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.tag == "Sign")
+        if (other.tag == "DialogProvider")
         {
             if (!dialogManager.IsDialogWindowOpen && Input.GetButtonDown("Interact"))
             {
-                InteractSign(other);
+                InteractDialogProvider(other);
             }
 
         }
@@ -41,13 +46,13 @@ public class PlayerInteract : MonoBehaviour
         roomManager.SetCurrentRoom(other.GetComponent<Room>());
     }
 
-    void InteractSign(Collider2D other)
+    void InteractDialogProvider(Collider2D other)
     {
-        Sign sign = other.GetComponent<Sign>();
+        DialogProvider dialogProvider = other.GetComponent<DialogProvider>();
 
-        if (sign != null)
+        if (dialogProvider != null)
         {
-            sign.DisplayDialog();
+            dialogProvider.DisplayDialog();
         }
 
     }
