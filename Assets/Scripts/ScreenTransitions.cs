@@ -9,7 +9,6 @@ public class ScreenTransitions : MonoBehaviour
 
     void Start()
     {
-        transform.GetComponent<Renderer>().sortingLayerName = "Top";
         anim = GetComponent<Animator>();
     }
 

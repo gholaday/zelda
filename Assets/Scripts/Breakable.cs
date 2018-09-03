@@ -12,7 +12,7 @@ public class Breakable : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    public void Break()
+    public virtual void Break()
     {
         animator.SetTrigger("destroy");
 

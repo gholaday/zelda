@@ -9,6 +9,7 @@ TagManager:
   - DialogProvider
   - Teleporter
   - Breakable
+  - PlayerHurt
   layers:
   - Default
   - TransparentFX
@@ -57,4 +58,7 @@ TagManager:
     locked: 0
   - name: Top
     uniqueID: 1915882013
+    locked: 0
+  - name: UI
+    uniqueID: 3265637075
     locked: 0

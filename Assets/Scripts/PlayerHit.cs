@@ -5,6 +5,13 @@ using UnityEngine;
 public class PlayerHit : MonoBehaviour
 {
 
+    Player player;
+
+    void Awake()
+    {
+        player = FindObjectOfType<Player>();
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Breakable")
@@ -15,6 +22,12 @@ public class PlayerHit : MonoBehaviour
             {
                 breakable.Break();
             }
+        }
+
+        Damageable damageable = other.GetComponent<Damageable>();
+        if (damageable != null)
+        {
+            damageable.TakeDamage(player.Strength);
         }
     }
 
