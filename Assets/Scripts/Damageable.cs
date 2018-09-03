@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Damageable : MonoBehaviour
 {
 
-    public int StartingHealth;
+    public int MaximumHealth;
     public int InvulnerabilityFrames;
     public int CurrentHealth;
     bool vulnerable = true;
@@ -22,13 +22,18 @@ public abstract class Damageable : MonoBehaviour
             vulnerable = false;
 
             StartCoroutine(FlashAndBecomeInvulnerable());
-            CurrentHealth -= damage;
+            SetCurrentHealth(CurrentHealth - damage);
 
             if (CurrentHealth <= 0)
             {
                 Die();
             }
         }
+    }
+
+    public virtual void SetCurrentHealth(int health)
+    {
+        CurrentHealth = health;
     }
 
     public abstract void Die();

@@ -22,7 +22,7 @@ public class CameraMovement : MonoBehaviour
         player = FindObjectOfType<PlayerMovement>();
     }
 
-    void FixedUpdate()
+    void LateUpdate()
     {
         if (transform.position != target.position)
         {

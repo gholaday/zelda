@@ -6,6 +6,9 @@ public class Player : Damageable
 {
     public int Strength = 1;
 
+    public delegate void OnCurrentHealthChangeDelegate();
+    public static event OnCurrentHealthChangeDelegate currentHealthChange;
+
     void Awake()
     {
         Application.targetFrameRate = 60;
@@ -13,7 +16,7 @@ public class Player : Damageable
 
     void Start()
     {
-        CurrentHealth = StartingHealth;
+        SetCurrentHealth(MaximumHealth);
     }
 
     void Update()
@@ -21,7 +24,11 @@ public class Player : Damageable
 
     }
 
-
+    public override void SetCurrentHealth(int health)
+    {
+        base.SetCurrentHealth(health);
+        currentHealthChange();
+    }
 
     public override void Die()
     {

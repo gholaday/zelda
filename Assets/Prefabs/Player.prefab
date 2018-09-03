@@ -505,8 +505,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f455598fdd5759447a607f2bf93f4fbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingHealth: 3
+  MaximumHealth: 3
   InvulnerabilityFrames: 60
+  CurrentHealth: 0
   Strength: 1
 --- !u!114 &114801507967603210
 MonoBehaviour:

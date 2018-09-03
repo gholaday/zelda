@@ -8,7 +8,7 @@ public class Enemy : Damageable
 
     void Start()
     {
-        CurrentHealth = StartingHealth;
+        CurrentHealth = MaximumHealth;
     }
 
     void Update()
@@ -25,7 +25,7 @@ public class Enemy : Damageable
     void OnTriggerEnter2D(Collider2D other)
     {
 
-        if (other.tag == "PlayerHurt")
+        if (other.tag == "Player")
         {
             Player player = other.GetComponentInParent<Player>();
             if (player != null)
