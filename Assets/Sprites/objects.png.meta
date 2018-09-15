@@ -81,8 +81,8 @@ TextureImporter:
     21300152: objects_76
     21300154: objects_77
     21300156: objects_78
-    21300158: objects_79
-    21300160: objects_80
+    21300158: speech_bubble0
+    21300160: speech_bubble3
     21300162: pot_0
     21300164: pot_2
     21300166: pot_3
@@ -90,8 +90,8 @@ TextureImporter:
     21300170: objects_85
     21300172: objects_86
     21300174: objects_87
-    21300176: objects_88
-    21300178: objects_89
+    21300176: speech_bubble1
+    21300178: speech_bubble2
     21300180: objects_90
     21300182: objects_91
     21300184: objects_92
@@ -1784,7 +1784,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_79
+      name: speech_bubble0
       rect:
         serializedVersion: 2
         x: 32
@@ -1804,7 +1804,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_80
+      name: speech_bubble3
       rect:
         serializedVersion: 2
         x: 48
@@ -1844,7 +1844,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_88
+      name: speech_bubble1
       rect:
         serializedVersion: 2
         x: 32
@@ -1864,7 +1864,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_89
+      name: speech_bubble2
       rect:
         serializedVersion: 2
         x: 48
